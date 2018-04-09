@@ -1,0 +1,21 @@
+{
+  "name": "ai-kido",
+  "version": "1.0.0",
+  "description": "Extensible, composable and simple AIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "keywords": [
+    "ai"
+  ],
+  "author": "V.Sheruda",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "pino": "^4.11.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0"
+  }
+}
