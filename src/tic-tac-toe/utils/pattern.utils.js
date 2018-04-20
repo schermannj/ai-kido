@@ -53,9 +53,19 @@ const pattern_properties = ({ space, weight = 1, name }) => ({
       Object.defineProperty(this, 'invalid', { value: true });
     }
   },
+  count_filled_cell: {
+    value: function () {
+      return this.filter(it => it.meta.content !== this.meta.space).length;
+    }
+  },
+  count_empty_cell: {
+    value: function () {
+      return this.length - this.count_filled_cell();
+    }
+  },
   saturation: {
     value: function () {
-      return this.filter(it => it.meta.content !== this.meta.space).length / this.length;
+      return this.count_filled_cell() / this.length;
     }
   },
   score: {

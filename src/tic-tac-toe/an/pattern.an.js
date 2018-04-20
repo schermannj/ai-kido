@@ -33,6 +33,7 @@ module.exports = (name = 'pattern') => (factor = 0.6) => ({ board, cursor, space
   flatten,
   filter(it => !it.invalid), // filter out patterns that are out of the borders
   filter(it => it.saturation() !== 1), // filter out full patterns
+  filter(it => it.count_empty_cell() <= 2), // filter out patterns with 2 or more steps
   sortBy(it => it.score() * -1), // sort desc
   head,
   map_move(space),

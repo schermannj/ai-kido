@@ -109,6 +109,47 @@ test('3x3 board test fork', (t) => {
     [null, null, 0]
   ]);
 
-  // TODO: fix this case
   t.deepEqual(move_4_1, [0, 2]);
+});
+
+test('google impossible mode test', (t) => {
+  const move_1 = ai_cfg([
+    [null, null, null],
+    [null, 0, null],
+    [null, null, null]
+  ]);
+
+  t.deepEqual(move_1, [0, 0]);
+
+  const move_2 = ai_cfg([
+    [1, null, null],
+    [null, 0, 0],
+    [null, null, null]
+  ]);
+
+  t.deepEqual(move_2, [0, 1]);
+
+  const move_3 = ai_cfg([
+    [1, 0, null],
+    [1, 0, 0],
+    [null, null, null]
+  ]);
+
+  t.deepEqual(move_3, [0, 2]);
+
+  const move_4 = ai_cfg([
+    [1, null, null],
+    [1, 0, 0],
+    [0, null, null]
+  ]);
+
+  t.deepEqual(move_4, [2, 0]);
+
+  const move_5 = ai_cfg([
+    [1, null, 1],
+    [1, 0, 0],
+    [0, 0, null]
+  ]);
+
+  t.deepEqual(move_5, [1, 0]);
 });
